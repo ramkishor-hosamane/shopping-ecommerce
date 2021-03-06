@@ -1,0 +1,107 @@
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="row">
+        <!--
+        <div class="col-2">
+            
+            <div class="card">
+                <h2>Filter</h2>
+            </div>
+        </div>
+
+        -->
+
+
+        <div class="col">
+            <h1 class="text-center">{{productType}}</h1>
+
+
+            <!--Loading thingy-->
+            <div class="row" *ngIf="isloading">
+
+                <div *ngFor="let item of [1,2,3]" class="col-md-4 col-sm-6 ">
+                    <div class="card my-2 product-holder">
+                        <div class="ui placeholder">
+                            <div class="square image" style="height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content">
+                        <div class="ui placeholder">
+                            <div class="header">
+                                <div class="very short line"></div>
+                                <div class="medium line"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div>
+                        <br>
+                    </div>
+                    <a href="#" class="btn btn-block btn-success disabled">Add to Cart</a>
+
+
+                </div>
+
+
+
+            </div>
+            <!--Loading thungy End-->
+
+
+
+            <div class="row">
+
+                <div *ngFor="let product of products | paginate: {
+                                                        itemsPerPage:3,
+                                                        currentPage:page,
+                                                        totalItems:totalRecords}" class="col-md-4 col-sm-6 ">
+                    <div class="card my-2 product-holder">
+                        <div class="image-holder">
+
+                            <img src="{{product.image}}" style="height: 250px;" class="card-img-top"
+                                (click)="selectProduct(product.id)" alt="{{product.title}}">
+
+                        </div>
+                        <div class="card-header">
+                            <div class="card-title">
+                                <p>{{product.title | titlecase}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            <h6>{{product.description.substr(0,25)}} ...</h6>
+                            <h3>Price : {{product.price | currency:'INR'}}</h3>
+
+
+                        </div>
+
+                        <a href="#" class="btn btn-success">Add to Cart</a>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <br>
+            <pagination-controls *ngIf="!isloading" class="text-center" (pageChange)="page = $event">
+            </pagination-controls>
+
+
+
+
+
+        </div>
+    </div>
+
+</div>

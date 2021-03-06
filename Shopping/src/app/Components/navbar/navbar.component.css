@@ -1,0 +1,19 @@
+.nav-link
+{
+    font-size: 18px;
+}
+
+.navbar-nav .nav-item
+{
+    padding: 10px;
+}
+.signup
+{
+    border: 1px solid #505978;border-radius: 5px;outline: none;
+    transition: 0.2s all ease;    
+}
+
+.signup:hover
+{
+    background-color: aliceblue;
+}

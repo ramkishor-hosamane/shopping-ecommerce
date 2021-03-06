@@ -1,0 +1,61 @@
+<div style="padding: 10px 40px;">
+    <div class="row">
+        <div class="col-4">
+
+
+            <div class="card my-2 product-holder">
+                        
+                <img src="{{product.image}}" style="height: 250px;" class="card-img-top" alt="{{product.title}}">
+            <div class="card-header">
+              <div class="card-title">
+                  <p>{{product.title | titlecase}}</p>
+                
+                </div>
+              
+            </div>
+
+            <div class="card-body">
+                <h3>Price : {{product.price | currency:'INR'}}</h3>
+            </div>
+
+            <a href="#" class="btn btn-success">Add to Cart</a>
+            
+            </div>
+
+
+
+
+        </div>
+
+        <div class="col text-center">
+
+            <h2>{{product.title | titlecase}}</h2>
+            <br>
+            <table width="100%" cellspacing="5" border="0px" class="ui definition table">
+                <tr>
+                    <td class="two wide column">ID</td>
+                    <td>{{product.id}}</td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Category</td>
+                    <td>{{product.category}}</td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Price</td>
+                    <td>{{product.price}}</td>
+                    
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>{{product.description}}</td>
+                    
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
